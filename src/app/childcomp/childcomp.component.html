@@ -1,0 +1,24 @@
+<p>childcomp works!</p>
+<br>
+<!-- <h3>Name is <b>{{namedata}}</b> My Marks is <b>{{markdata}}</b></h3> -->
+
+<!-- <br> -->
+
+<h3>Name is <b>{{objdata.name}}</b> My Marks is <b>{{objdata.mark}}</b></h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mark</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of listarray">
+            <td>{{item.name}}</td>
+            <td>{{item.mark}}</td>
+    </tbody>
+</table>
+<br>
+<input class="form-control" #name /><br>
+<a href="#" class="btn btn-primary" (click)="dataupdateevent.emit(name.value)"> Click</a>
+
+<h3>{{welcomename}}</h3>

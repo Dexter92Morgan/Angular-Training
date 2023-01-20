@@ -1,0 +1,21 @@
+<div class="cotainer">
+        <p>Login Page</p>
+
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input #name class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <input #role class="form-control">
+                </div>
+                <div class="form-group">
+                       <br>
+                       <a class="btn btn-primary" (click)="proceedLogin(name.value, role.value)">Login</a> 
+
+                </div>
+            </div>        
+        </div>
+</div>

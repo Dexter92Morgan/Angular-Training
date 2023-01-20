@@ -1,0 +1,33 @@
+<style>
+h1{
+    color: blueviolet;
+}
+</style>
+
+<h1 *ngIf='isSpecial'>{{title}}</h1>
+
+<h3 [ngClass]="isSpecial?Classname:''">Testing with ngClass</h3>
+<h3 class="{{Classname}}">Testing with ngClass</h3>
+<br>
+<h3 [ngStyle]="style">Testing with ngStyle</h3>
+<br>
+<input (change)="datachange()" [(ngModel)] = "inputvalue" placeholder="ngModel" />
+<ul>
+    <li *ngFor='let item of country'>
+        {{item}}
+    </li>
+</ul>
+
+<!-- Switchcase -->
+<ul *ngFor='let item of people'[ngSwitch]='item.country'>
+    <li *ngSwitchCase="'India'" class="text-success">
+        {{item.name}} ({{item.country}})
+    </li>
+    <li *ngSwitchDefault class="text-primary">
+        {{item.name}} ({{item.country}})
+    </li>
+</ul>
+
+<!-- customdirectives -->
+
+<h2 appFontchange>Custom Directives</h2>
