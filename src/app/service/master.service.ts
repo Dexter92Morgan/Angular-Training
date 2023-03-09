@@ -18,8 +18,12 @@ export class MasterService {
 
   // using api
   constructor(private http: HttpClient) {}
-    apiurl = 'http://localhost:24012/api/Employee';
+    //apiurl = 'http://localhost:24012/api/Employee';
+    apiurl = 'http://localhost:5000/api/Employee';
+    empdata: any;
   emplist: any;
+
+  
   GetApiData() {
     return this.http.get(this.apiurl);
   }
@@ -48,5 +52,11 @@ export class MasterService {
         return false;
       }
     }
+  }
+
+
+  GetData() {
+    return this.http.get(this.apiurl);
+    
   }
 }

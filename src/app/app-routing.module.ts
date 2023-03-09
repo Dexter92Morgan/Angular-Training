@@ -30,7 +30,7 @@ const routes: Routes = [
 
   // ];
 
-  {component: HomeComponent,path:"",canActivate:[AuthGuard]},
+  {component: EmplistingComponent,path:"",canActivate:[AuthGuard]},
   {component: AboutComponent,path:"About",children: [
     {component: AboutcompanyComponent,path:"company"}
   ], canActivate:[RoleGuard]},

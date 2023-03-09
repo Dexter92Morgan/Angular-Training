@@ -15,7 +15,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { FormsModule} from '@angular/forms';
 import { FontchangeDirective } from './direct/fontchange.directive';
 import { PopupComponent } from './popup/popup.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { PipesComponent } from './pipes/pipes/pipes.component';
 import { CustompipePipe } from './pipes/custompipe/custompipe.pipe';
 import { TwowaybindingComponent } from './twowaybinding/twowaybinding/twowaybinding.component';
@@ -32,6 +32,8 @@ import { LoginrouteComponent } from './routing/loginroute/loginroute.component';
 import { UserComponent } from './user/user.component';
 import { ValidatorsComponent } from './validators/validators.component';
 import { ReactiveFormsModule} from '@angular/forms';
+import { LoginAuthenticationComponent } from './Authentication/login-authentication/login-authentication.component';
+import { TokenInterceptorService } from './service/token-interceptor.service';
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     LoginrouteComponent,
     UserComponent,
     ValidatorsComponent,
+    LoginAuthenticationComponent,
 
  
   ],
@@ -74,7 +77,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule
    
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
